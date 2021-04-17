@@ -35,7 +35,7 @@ const Test = () => {
     const [finalResult, setFinalResult] = useState("");
 
     useEffect(() => {
-        axios.get("http://localhost:3001/get/question").then((response) => {
+        axios.get("https://mern-cafe-mbti.herokuapp.com/get/question").then((response) => {
             setQuestionList(response.data);
             setIsLoading(false);
         });

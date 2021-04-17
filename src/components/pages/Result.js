@@ -14,7 +14,7 @@ const Result = () => {
 
     useEffect(() => {
 
-        axios.get("http://localhost:3001/get/result").then((response) => {
+        axios.get("https://mern-cafe-mbti.herokuapp.com/get/result").then((response) => {
             setResultList(response.data)
         })
 
