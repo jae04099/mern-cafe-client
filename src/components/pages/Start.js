@@ -8,7 +8,7 @@ const Start = () => {
         <StartWrap>
             <StartMain>
                 <Contents>
-                    <span class="icon">
+                    <span className="icon">
                         <img
                             src="/images/background/coffee-solid.svg"
                             alt="coffeecup"
