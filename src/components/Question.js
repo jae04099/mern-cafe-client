@@ -1,14 +1,14 @@
 import React from "react";
 import Styled from "styled-components";
 
-function Question({questionList}) {
+function Question({ questionList }) {
     return (
         <QuestionWrap>
             <i className={questionList.icon}></i>
             <h3>
-            {questionList.question.split('</br>').map(line => {
-                        return(<>{line}<br/></>)
-                    })}
+                {questionList.question.split('</br>').map((line, index) => {
+                    return (<React.Fragment key={index}>{line}<br /></React.Fragment>)
+                })}
             </h3>
         </QuestionWrap>
     );
@@ -16,7 +16,7 @@ function Question({questionList}) {
 
 export default Question;
 
-const QuestionWrap = Styled.div `
+const QuestionWrap = Styled.div`
 width: 100%;
 height: 55%;
 display: flex;

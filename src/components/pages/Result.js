@@ -5,30 +5,30 @@ import Spinner from "../Spinner"
 import axios from "axios";
 
 const Result = () => {
-    const [resultList, setResultList] = useState();
-    const [targetList, setTargetList] = useState();
-    const [reRender, setReRender] = useState();
-    const [isLoading, setIsLoading] = useState(true);
+    const [resultList, setResultList] = useState(); //  결과 DB리스트
+    const [targetList, setTargetList] = useState(); // mbti와 맞는 최종 결과
+    const [reRender, setReRender] = useState(); // result 페이지로 이동하 때, 한번 더 렌더링을 시켜야 하는데 그럴 버튼 등이 없어서 forcerender과 비슷한 역할을 함
+    const [isLoading, setIsLoading] = useState(true);   // 결과나오기 전 로딩용 불리언
 
-    let mbti_result = JSON.parse(localStorage.getItem("fin_result"))
+    let mbti_result = JSON.parse(localStorage.getItem("fin_result"))    // test에서 로컬스토리지에 저장했던 최종결과 가져옴
 
+    // 결과 DB 가져옴
     useEffect(() => {
-
         axios.get("https://mern-cafe-mbti.herokuapp.com/get/result").then((response) => {
             setResultList(response.data)
         })
-
     }, [reRender])
 
+    // 렌더 한번 시키고 최종 결과 보냄
     useEffect(async () => {
         setReRender(0)
         await getFinalMbti()
-        await (targetList && console.log(targetList))
         if (targetList) {
             setIsLoading(false)
         }
     }, [resultList])
 
+    // 루틴 돌면서 결과와 mbti가 같은 리스트 값을 뽑아 결과에 넣음
     const getFinalMbti = () => {
         for (let i = 0; i < 16; i++) {
             if (resultList && (resultList[i].mbti == mbti_result)) {
@@ -50,6 +50,7 @@ const Result = () => {
                 </div>
                 <div class="coffee-desc">
                     {targetList.feature.long.split('</br>').map(line => {
+                        // DB의 자료들은 p와 br태그가 스트링에 포함 돼 있어 제거함
                         return (<p>{line.replace(/(<\/?(?:a|p|img)[^>]*>)|<[^>]+>/ig, '')}<br /></p>)
                     })}
                 </div>

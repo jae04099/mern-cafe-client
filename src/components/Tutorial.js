@@ -1,9 +1,9 @@
 import React from "react";
 import Snow from "./Snow";
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from "styled-components";
 import NextBtn from './StoryBtn'
 
-function Tutorial({story, storyHandler, count}) {
+function Tutorial({ story, storyHandler, count }) {
     return (
         <Wrap>
             <Snow />
@@ -11,17 +11,17 @@ function Tutorial({story, storyHandler, count}) {
                 <h3>{story.title}</h3>
                 <p>
                     {story.first_sentence.split('\n').map(line => {
-                        return(<>{line}<br /></>)
+                        return (<>{line}<br /></>)
                     })}
                 </p>
                 <p>
-                {story.second_sentence.split('\n').map(line => {
-                        return(<>{line}<br /></>)
+                    {story.second_sentence.split('\n').map(line => {
+                        return (<>{line}<br /></>)
                     })}
                 </p>
             </StoryWrap>
             <ButtonWrap>
-                <NextBtn storyHandler={storyHandler} count={count}/>
+                <NextBtn storyHandler={storyHandler} count={count} />
             </ButtonWrap>
         </Wrap>
     );

@@ -1,18 +1,18 @@
 import React from 'react'
 import Styled from 'styled-components'
 
-function ChoiceBtn({questionList, questionHandler}) {
+function ChoiceBtn({ questionList, questionHandler }) {
     return (
         <SelectSecWrap>
             <SelectBtn onClick={questionHandler} value={questionList.alpa_result.first}>
-            {questionList.select_list.first.split('</br>').map(line => {
-                        return(<>{line}<br/></>)
-                    })}
+                {questionList.select_list.first.split('</br>').map((line, index) => {
+                    return (<React.Fragment key={index}>{line}<br /></React.Fragment>)
+                })}
             </SelectBtn>
-            <SelectBtn onClick={questionHandler}  value={questionList.alpa_result.second}>
-            {questionList.select_list.second.split('</br>').map(line => {
-                        return(<>{line}<br/></>)
-                    })}
+            <SelectBtn onClick={questionHandler} value={questionList.alpa_result.second}>
+                {questionList.select_list.second.split('</br>').map((line, index) => {
+                    return (<React.Fragment key={index}>{line}<br /></React.Fragment>)
+                })}
             </SelectBtn>
         </SelectSecWrap>
     )

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Button from "../Button";
 
 const Start = () => {
@@ -29,7 +29,7 @@ const Start = () => {
                         <br />
                     </p>
                     <Link to='/test'>
-                    <Button>시작하기</Button>
+                        <Button>시작하기</Button>
                     </Link>
                 </Contents>
             </StartMain>

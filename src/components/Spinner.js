@@ -5,14 +5,14 @@ import './Spinner.css'
 const Spinner = () => {
     return (
         <div className="coffeeWrap">
-        <div class="coffee-mug">
-            <div class="coffee-container">
-                <div class="coffee">
-                    
+            <div class="coffee-mug">
+                <div class="coffee-container">
+                    <div class="coffee">
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <h3>음료를 제조하고 있어요</h3>
+            <h3>음료를 제조하고 있어요</h3>
         </div>
     )
 }

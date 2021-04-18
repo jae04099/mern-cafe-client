@@ -43,7 +43,7 @@ border-radius: 1rem;
 
 const Percentage = Styled.div`
 transition: all 0.3s ease-out;
-width: ${props => props.theme.percentage*9}%;
+width: ${props => props.theme.percentage * 9}%;
 height: 0.5rem;
 background: #b56467;
 position: relative;

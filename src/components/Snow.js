@@ -73,18 +73,6 @@ function Snow() {
                 flakeA = flakes[i];
                 flakeA.update();
 
-                /*for (z = 0; z < flakes.length; z++) {
-  flakeB = flakes[z];
-  if (flakeA !== flakeB && distanceBetween(flakeA, flakeB) < 150) {          
-    ctx.beginPath();
-    ctx.moveTo(flakeA.x, flakeA.y);
-    ctx.lineTo(flakeB.x, flakeB.y);
-    ctx.strokeStyle = '#444444';
-    ctx.stroke();
-    ctx.closePath();
-  }
-}*/
-
                 ctx.beginPath();
                 ctx.arc(
                     flakeA.x,
@@ -113,13 +101,6 @@ function Snow() {
             } else {
                 return num;
             }
-        }
-
-        function distanceBetween(vector1, vector2) {
-            var dx = vector2.x - vector1.x,
-                dy = vector2.y - vector1.y;
-
-            return Math.sqrt(dx * dx + dy * dy);
         }
 
         init();

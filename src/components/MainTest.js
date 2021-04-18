@@ -4,12 +4,12 @@ import ProgBar from './ProgBar'
 import Question from './Question'
 import ChoiceBtn from './ChoiceBtn'
 
-function MainTest({questionList, questionNum, questionHandler}) {
+function MainTest({ questionList, questionNum, questionHandler }) {
     return (
         <TestWrap>
-            <ProgBar questionNum={questionNum}/>
-            <Question questionList={questionList[questionNum]}/>
-            <ChoiceBtn questionList={questionList[questionNum]} questionHandler={questionHandler}/>
+            <ProgBar questionNum={questionNum} />
+            <Question questionList={questionList[questionNum]} />
+            <ChoiceBtn questionList={questionList[questionNum]} questionHandler={questionHandler} />
         </TestWrap>
     )
 }
